@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from .models import Post
 
-posts = [
+"""posts = [
     {
         'author' : 'Steve Jobs',
         'title': 'Microsoft',
@@ -14,10 +15,10 @@ posts = [
         'date_posted': 'January 01, 2021'
     },
 ]
-
+"""
 def home(request):
     context = {
-        'posts' : posts
+        'posts' : Post.objects.all()
     }
 
     return render(request,'blog/home.html', context)
